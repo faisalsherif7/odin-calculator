@@ -22,3 +22,9 @@ function operate(a, b, op) {
     else if (op === '*') return multiply([a, b])
     else if (op === '/') return divide(a, b)
 }
+
+const buttons = document.querySelectorAll('button');
+const display = document.querySelector('.display')
+buttons.forEach(button => button.addEventListener('click', () => {
+    display.textContent += ' ' + button.textContent;
+}))
