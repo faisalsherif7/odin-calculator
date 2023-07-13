@@ -21,49 +21,55 @@ function operate(a, b, op) {
     else if (op === '/') return divide(a, b)
 }
 
+operatorClicked = false;
+
 const buttons = document.querySelectorAll('#calculator-button');
 const display = document.querySelector('.display');
-const equals = document.querySelector(".equals")
+buttons.forEach(button => button.addEventListener('click', () => {
+    if (operatorClicked === false) {
+        display.textContent += button.textContent;
+    }
+    else {
+        display.textContent = button.textContent;
+        operatorClicked = false;
+    }
+    console.log(`[${evalArray}] at the moment`);
+}))
+
+const operators = document.querySelectorAll("#operator")
+evalArray = []
+equalsClicked = false;
+operators.forEach(operator => operator.addEventListener('click', () => {
+    if (evalArray.length === 0) {
+        evalArray.push(display.textContent);
+        evalArray.push(operator.textContent);
+    } else if (evalArray.length === 1) {
+        evalArray.push(operator.textContent);
+    } else {
+        evalArray.push(display.textContent);
+        let result = operate(evalArray[0], evalArray[2], evalArray[1])
+        display.textContent = result;
+        evalArray = [];
+        evalArray.push(result);
+        evalArray.push(operator.textContent);
+    }
+    operatorClicked = true;
+}))
+
+
 const clear = document.querySelector(".clear")
-
-clear.addEventListener('click', () => display.textContent = '')
-buttons.forEach(button => button.addEventListener('click', () => display.textContent += button.textContent))
-
-equals.addEventListener('click', () => {
-
-    // Get the big number to be divided
-    let array = display.textContent.split('');
-
-    // If division available, do so
-    if (array.includes('/')) {
-        operateAll('/', array);
-    }
-
-    if (array.includes('*')) {
-        operateAll('*', array);
-    }
-
-    if (array.includes('+')) {
-        operateAll('+', array);
-    }
-
-    if (array.includes('-')) {
-        operateAll('-', array);
-    }
-
-    return display.textContent = array;
+clear.addEventListener('click', () => {
+    display.textContent = '';
+    evalArray = [];
 })
 
-
-function operateAll(operator, array) {
-    let indexArray = array.reduce((indexArray, currentElement, currentIndex) => {
-        if (currentElement === operator) {
-            indexArray.push(currentIndex);
-        }
-        return indexArray;
-    }, [])
-    indexArray.map(index => {
-        let result = operate(array[index - 1], array[index + 1], operator);
-        array.splice(index - 1, 3, result);
-    })
-}
+const equals = document.querySelector('.equals')
+equals.addEventListener('click', () => {
+    if (evalArray.length > 1) {
+        evalArray.push(display.textContent);
+        let result = operate(evalArray[0], evalArray[2], evalArray[1])
+        display.textContent = result;
+        evalArray = [];
+        evalArray.push(result);
+    }
+})
