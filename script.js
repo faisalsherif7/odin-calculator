@@ -33,7 +33,6 @@ buttons.forEach(button => button.addEventListener('click', () => {
         display.textContent = button.textContent;
         operatorClicked = false;
     }
-    console.log(`[${evalArray}] at the moment`);
 }))
 
 const operators = document.querySelectorAll("#operator")
