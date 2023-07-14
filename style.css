@@ -1,5 +1,5 @@
 body {
-    background-color: black;
+    background-color: wheat;
 }
 
 .container {
@@ -18,12 +18,13 @@ body {
     min-height: 60px;
     font-size: 50px;
     font-family: monospace;
-    margin-top: 120px;
-    background-color: rgb(50, 50, 50);
+    margin-top: 90px;
+    background-color: whitesmoke;
     margin-bottom: 5px;
     margin-left: 5px;
     margin-right: 5px;
     overflow: auto;
+    padding: 0px 15px;
 }
 
 .calculator {
@@ -47,7 +48,7 @@ button {
     font-size: 30px;
     border-radius: 10px;
     border: 0px;
-    background-color: rgb(50, 50, 50);
+    background-color: whitesmoke;
 }
 
 button:hover {
@@ -61,4 +62,11 @@ button:hover {
 
 #grow {
     justify-content: space-between;
+}
+
+.header {
+    font-family: monospace;
+    margin: auto;
+    text-align: center;
+    font-size: 20px;
 }
