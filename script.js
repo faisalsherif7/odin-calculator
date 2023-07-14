@@ -72,3 +72,10 @@ equals.addEventListener('click', () => {
         evalArray.push(result);
     }
 })
+
+
+const backspace = document.querySelector('.backspace');
+backspace.addEventListener('click', () => {
+    let str = display.textContent;
+    return display.textContent = `${str.slice(0, -1)}`
+})
