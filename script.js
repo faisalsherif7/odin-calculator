@@ -30,7 +30,7 @@ buttons.forEach(button => button.addEventListener('click', () => {
         if (button.textContent === '.') return;
     }
     if (operatorClicked === false) {
-        if (display.textContent.length > 7) return;
+        if (display.textContent.length > 8) return;
         display.textContent += button.textContent;
     }
     else {
