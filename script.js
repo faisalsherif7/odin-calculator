@@ -70,7 +70,7 @@ const equals = document.querySelector('.equals')
 equals.addEventListener('click', () => {
     if (evalArray.length > 1) {
         evalArray.push(display.textContent);
-        let result = operate(evalArray[0], evalArray[2], evalArray[1])
+        let result = operate(evalArray[0], evalArray[2], evalArray[1]);
         display.textContent = result.toPrecision(5);
         evalArray = [];
         evalArray.push(result);

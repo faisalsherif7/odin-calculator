@@ -7,30 +7,28 @@ body {
     margin: auto;
     display: flex;
     flex-direction: column;
-    /* border: 5px solid black; */
     padding: 10px;
     gap: 2px;
 }
 
 .display {
-    /* border: 2px solid white; */
     border-radius: 10px;
-    min-height: 60px;
-    min-width: 250px;
+    min-height: 80px;
+    min-width: 270px;
     font-size: 50px;
     font-family: monospace;
-    margin-top: 90px;
+    margin-top: 70px;
     background-color: whitesmoke;
     margin-bottom: 5px;
     margin-left: 5px;
     margin-right: 5px;
-    overflow: auto;
     padding: 0px 10px;
-    text-align: right;
+    display: flex;
+    justify-content: right;
+    align-items: center;
 }
 
 .calculator {
-    /* border: 2px solid white; */
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -45,7 +43,7 @@ body {
 }
 
 button {
-    padding: 10px 19px;
+    padding: 13px 23px;
     font-family: monospace;
     font-size: 30px;
     border-radius: 10px;
