@@ -27,6 +27,7 @@ const buttons = document.querySelectorAll('#calculator-button');
 const display = document.querySelector('.display');
 buttons.forEach(button => button.addEventListener('click', () => {
     if (operatorClicked === false) {
+        if (display.textContent.length > 7) return;
         display.textContent += button.textContent;
     }
     else {
