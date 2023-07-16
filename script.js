@@ -26,6 +26,9 @@ operatorClicked = false;
 const buttons = document.querySelectorAll('#calculator-button');
 const display = document.querySelector('.display');
 buttons.forEach(button => button.addEventListener('click', () => {
+    if (display.textContent.includes('.')) {
+        if (button.textContent === '.') return;
+    }
     if (operatorClicked === false) {
         if (display.textContent.length > 7) return;
         display.textContent += button.textContent;
