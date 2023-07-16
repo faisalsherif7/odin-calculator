@@ -55,7 +55,7 @@ button:hover {
     background-color: gray;
 }
 
-.zero,
+._0,
 .clear {
     flex-grow: 1;
 }

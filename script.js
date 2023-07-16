@@ -79,3 +79,31 @@ backspace.addEventListener('click', () => {
     let str = display.textContent;
     return display.textContent = `${str.slice(0, -1)}`
 })
+
+window.addEventListener('keydown', function(e) {
+    const key = e.key;
+    if (!isNaN(key)) {
+        document.querySelector(`._${key}`).click();
+    }
+    if (key === 'Backspace') {
+        document.querySelector(`.backspace`).click();
+    }
+    if (key === '/') {
+        document.querySelector(`.divide`).click();
+    }
+    if (key === '*') {
+        document.querySelector(`.multiply`).click();
+    }
+    if (key === '+') {
+        document.querySelector(`.add`).click();
+    }
+    if (key === '-') {
+        document.querySelector(`.subtract`).click();
+    }
+    if (key === '=') {
+        document.querySelector(`.equals`).click();
+    }
+    if (key === '.') {
+        document.querySelector(`.decimal`).click();
+    }
+})
